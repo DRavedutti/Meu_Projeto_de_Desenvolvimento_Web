@@ -1,34 +1,74 @@
+/*
+    style.formulario.css
+    - Propósito: estilos para o formulário de contato/receitas.
+    - Notas: contém regras para layout do form, botões, textarea e header.
+    - Observação: copiado/compartilhado com outras páginas (sobre, receitas, bebidas) quando apropriado.
+*/
 /* Estilos gerais para o corpo da página */
 body {
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de preto para vermelho escuro */
-    font-family: 'Times'; /* Define a fonte do texto */
-    min-height: 500vh; /* Altura mínima da página (500% da altura da viewport) */
-    padding: 20px; /* Espaçamento interno */
-    color: white; /* Cor do texto */
+    background-image: image-set(
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png") 1x,
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl@2x.png") 2x
+    );
+    background-image: url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Times', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Container para a imagem do formulário */
-.imagem-container-formulario {
-    display: flex; /* Ativa o modelo flexbox para layout */
-    align-items: center; /* Centraliza os itens verticalmente */
-    justify-content: space-between; /* Distribui o espaço entre os elementos */
-    width: 625px; /* Largura automática baseada no conteúdo */
-    height: 470px; /* Altura fixa do container */
-    border: 2px solid #ffffff; /* Borda branca de 2px */
-    border-radius: 10px; /* Cantos arredondados */
-    padding: 10px; /* Espaçamento interno */
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de fundo */
-    box-shadow: 0 4px 8px rgba(10, 5, 5, 0.2); /* Sombra suave */
-    overflow: hidden; /* Esconde conteúdo que ultrapassa os limites */
+.p-instrucoes-formulario {
+    /* Parágrafo de instruções no topo do formulário
+       - destacado para orientar o usuário sobre o preenchimento
+    */
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.desalinhado{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Container principal para centralizar e adicionar borda com gradiente */
+form, header {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 /* Estilo para o título principal */
 .titulo {
     font-size: 2.5em; /* Tamanho da fonte (2.5 vezes o tamanho padrão) */
     text-align: center; /* Alinhamento centralizado do texto */
-    border: 2px solid #ffffff; /* Borda branca */
-    border-radius: 10px; /* Cantos arredondados */
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de fundo */
     color: rgb(255, 255, 255); /* Cor do texto branca */
     padding: 0; /* Remove espaçamento interno */
     height: 75px; /* Altura fixa */
@@ -56,7 +96,13 @@ form label {
 
 /* Estilo para a área de texto (textarea) */
 #mensagem_da_sua_receita {
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de fundo */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente de fundo */
     color: white; /* Cor do texto */
     border: 2px solid white; /* Borda branca */
     border-radius: 15px; /* Cantos arredondados */
@@ -79,6 +125,27 @@ form label {
     color: rgba(255, 255, 255, 0.7); /* Placeholder com opacidade reduzida */
 }
 
+/* Estilização do footer */
+footer {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
 /* Estilo base para os botões */
 .meu-botao {
     background-color: rgb(255, 255, 255); /* Fundo branco */
@@ -93,7 +160,13 @@ form label {
 
 /* Estilo para botões quando o mouse passa por cima (hover) */
 .meu-botao:hover {
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente no hover */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente no hover */
     color: white; /* Texto branco no hover */
     transform: translateY(-2px); /* Efeito de levitação (movimento para cima) */
 }
@@ -102,4 +175,3 @@ a {
     color: white !important; /* Muda a cor de todos os links para branco */
     text-decoration: none !important; /* Remove sublinhado de todos os links */
 }
-
