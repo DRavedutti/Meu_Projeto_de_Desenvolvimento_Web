@@ -1,85 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!--
+  formulariocontato.html
+  - Propósito: formulário para receber receitas do usuário.
+  - Observações: inclui inputs, radio/checkbox, textarea e botões submit/reset.
+  - Comentários explicativos foram adicionados e pequenos ajustes ortográficos foram aplicados.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Formulário de contato — receber receitas</title>
+    <!-- CSS específico do formulário: carrega estilos (layout do form, botões, textarea) -->
+    <link rel="stylesheet" href="style.formulario.css">
+    <!-- FontAwesome (ícones usados na página, se houver) -->
+    <script src="https://kit.fontawesome.com/04ea6be566.js" crossorigin="anonymous"></script>
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-widht, initial-scele=1.0">
-        <title>Formulario de Contatos para Receber Receitas</title>
-        <link rel="stylesheet" href="style.formulario.css">
-         <div class="imagem-container-formulario">
-            <img src="https://img.freepik.com/fotos-premium/cozinha-de-churrascaria-foto-recortada-do-chef-que-serve-bife-de-cowboy-fatiando-a-carne-grelhada-na-placa-de-madeira_279525-7296.jpg" 
-                 alt="Aqui a sua Trilha pela Grelha Começa!">
-         </div>
-          
-    </head>
+<body>
+    <!-- Cabeçalho do formulário -->
+    <header>
+          <h1 class="titulo">Formulário para receber receitas</h1>
+    </header>
 
-    <body>
-        <header>
-            <h1 class="titulo">Formulario para Receber Receitas</h1>
-            <p>Preencha todos os Campos Abaixo para Receber Receitas</p>
-        </header>
+    <!-- Formulário principal
+        - contém campos de entrada, opções e textarea para a receita
+        - mantemos os botões de enviar e limpar aqui
+    -->
+    <form>
+        <p class="p-instrucoes-formulario">Preencha todos os Campos Abaixo para Receber Receitas</p><br><br>
+        <label for="nome">Nome Completo: </label>
+        <input type="text" id="nome" name="nome" placeholder="Seu Nome Aqui"><br><br>
 
-        <form>
+        <label for="email">Email: </label>
+        <input type="email" id="email" placeholder="seu.email@exemplo.com"><br><br>
 
-            <label for="nome">Nome Completo: </label>
-            <input type="text" id="nome" name="nome" placeholder="Seu Nome Aqui"><br><br>
+        <label for="senha">Senha: </label>
+        <input type="password" id="senha" name="senha" placeholder="********"><br><br>
 
-            <label for="email">Email: </label>
-            <input type="email" id="email" placeholder="seu.email@exemplo.com"><br><br>
+        <label for="idade">Sua Idade: </label>
+        <input type="number" id="idade" name="idade" min="16" max="100"><br><br>
 
-            <label for="senha">Senha: </label>
-            <input type="password" id="senha" name="senha" placeholder="********"><br><br>
+        <label for="numero_de_telefone">Seu Numero: </label>
+        <input type="tel" id="numero_de_telefone" name="numero_de_telefone" placeholder="(00) 000000000"><br><br>
 
-            <label for="idade">Sua Idade: </label>
-            <input type="number" id="idade" name="idade" min="16" max="100"><br><br>
+        <p>Qual Novo Tipo de Receita você quer que Fazemos para você?</p>
+        <input type="radio" id="picanha" name="tipo_de_receita_para_churrasco" value="picanha">
+        <label for="picanha">Picanha</label><br>
+        <input type="radio" id="frango" name="tipo_de_receita_para_churrasco" value="frango">
+        <label for="frango">Frango</label><br>
+        <input type="radio" id="frango_assado" name="tipo_de_receita_para_churrasco" value="frango_assado">
+        <label for="frango_assado">Frango Assado</label><br>
+        <input type="radio" id="linguica" name="tipo_de_receita_para_churrasco" value="linguica">
+        <label for="linguica">Linguiça</label><br>
+        <input type="radio" id="pao_de_alho" name="tipo_de_receita_para_churrasco" value="pao_de_alho">
+        <label for="pao_de_alho">Pão de Alho</label><br>
 
-            <label for="numero_de_telefone">Seu Numero: </label>
-            <input type="tel" id="numero_de_telefone" name="numero_de_telefone" placeholder="(00) 000000000"><br><br>
-            
+        <p>Conte para nós. Qual tipo de receita você conhece?</p>
+        <input type="checkbox" id="picanha_check" name="tipo_de_receita" value="picanha">
+        <label for="picanha_check">Picanha</label><br>
+        <input type="checkbox" id="frango_check" name="tipo_de_receita" value="frango">
+        <label for="frango_check">Frango</label><br>
+        <input type="checkbox" id="frango_assado_check" name="tipo_de_receita" value="frango_assado">
+        <label for="frango_assado_check">Frango Assado</label><br>
+        <input type="checkbox" id="linguica_check" name="tipo_de_receita" value="linguica">
+        <label for="linguica_check">Linguiça</label><br>
+        <input type="checkbox" id="pao_de_alho_check" name="tipo_de_receita" value="pao_de_alho">
+        <label for="pao_de_alho_check">Pão de Alho</label><br>
+        <input type="checkbox" id="peixe_check" name="tipo_de_receita" value="peixe">
+        <label for="peixe_check">Peixe</label><br>
+        <input type="checkbox" id="costela_check" name="tipo_de_receita" value="costela">
+        <label for="costela_check">Costela</label><br><br>
 
+        <label for="mensagem_da_sua_receita" class="desalinhado">Escreva como faz a sua receita ou como quer que fazemos para você:</label><br><br>
+        <textarea id="mensagem_da_sua_receita" name="mensagem_da_sua_receita" rows="6" cols="40" placeholder="Digite aqui...."></textarea><br><br>
+        
+        <button type="submit" class="meu-botao">Enviar Receita</button>
+        <button type="reset" class="meu-botao">Limpar Receita</button>
+    <a href="../../PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html"><i class="fa-solid fa-utensils" style="color: #ffffff;"></i></a>
+    </form>
 
+    <!-- Rodapé do formulário (mensagem de agradecimento) -->
+    <footer>
+        <p>Obrigado por nos ajudar a trazer mais conteudo e ajudar serem craques no churrasco</p>
+    </footer>
 
-            <p>Qual Novo Tipo de Receita você quer que Fazemos para você?</p>
-            <input type="radio" id="picanha" name="tipo_de_receita_para_churrasco" value="picanha">
-            <label for="picanha">Picanha</label><br>
-            <input type="radio" id="frango" name="tipo_de_receita_para_churrasco" value="frango">
-            <label for="frango">Frango</label><br>
-            <input type="radio" id="frango_assado" name="tipo_de_receita_para_churrasco" value="frango_assado">
-            <label for="frango_assado">Frango Assado</label><br>
-            <input type="radio" id="linguica" name="tipo_de_receita_para_churrasco" value="linguica">
-            <label for="linguica">Linguiça</label><br>
-            <input type="radio" id="pao_de_alho" name="tipo_de_receita_para_churrasco" value="pao_de_alho">
-            <label for="pao_de_alho">Pão de Alho</label><br>
-
-            <p>Conte para nós. Qual tipo de receita você conhece?</p>
-            <input type="checkbox" id="picanha" name="tipo_de_receita" value="picanha">
-            <label for="picanha">Picanha</label><br>
-            <input type="checkbox" id="frango" name="tipo_de_receita" value="frango">
-            <label for="frango">Frango</label><br>
-            <input type="checkbox" id="frango_assado" name="tipo_de_receita" value="frango_assado">
-            <label for="frango_assado">Frango Assado</label><br>
-            <input type="checkbox" id="linguica" name="tipo_de_receita" value="linguica">
-            <label for="linguica">Linguiça</label><br>
-            <input type="checkbox" id="pao_de_alho" name="tipo_de_receita" value="pao_de_alho">
-            <label for="pao_de_alho">Pão de Alho</label><br>
-            <input type="checkbox" id="peixe" name="tipo_de_receita" value="peixe">
-            <label for="peixe">Peixe</label><br>
-            <input type="checkbox" id="costela" name="tipo_de_receita" value="costela">
-            <label for="costela">Costela</label><br><br>
-
-            <label for="mensagem_da_sua_receita">Escreva como faz a sua receita ou como quer que fazemos para você:</label><br><br>
-            <textarea id="mensagem_da_sua_receita" name="mensagem_da_sua_receita" rows="6" cols="40" placeholder="Digite aqui...."></textarea><br><br>
-
-            <button type="submit" class="meu-botao">Enviar Receita</button>
-            <button type="reset" class="meu-botao">Limpar Receita</button>   
-        </form>
-
-        <footer>
-            <p>Obrigado por nos ajudar a trazer mais conteudo e ajudar serem craques no churrasco</p>
-        </footer>
-
-        <a href="file:///C:/Users/DAVI/Desktop/MeuProjetoDesenvolvimentoWeb/MeuProjetoWeb/PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html"><p> Volte Para Pagina Incial</p></a>
-
-
-    </body>
+    <!-- Botão/Link para voltar à página inicial
+         - usa caminho relativo para navegar de volta à página principal
+         - se hospedar o site, prefira caminhos relativos/absolutos sem file://
+    -->
+    <button onclick="window.location.href='../../PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html'" 
+            class="meu-botao">
+        Volte Para Página Inicial
+    </button>
+</body>
 </html>
