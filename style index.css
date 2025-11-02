@@ -1,48 +1,127 @@
-/* Estilos gerais para o corpo da página */
+/*
+    style.index.css
+    - Propósito: estilos principais da página inicial (header, nav, vídeos, footer)
+    - Notas: vários estilos usados como base para outras páginas; mantenha escopo quando copiar.
+*/
+
+/* Estilização global dos links (usado em toda a página) */
+a {
+        color: white; /* Deixa o texto do link branco */
+        text-decoration: none; /* Remove o sublinhado padrão */
+}
+
+/* Estilização dos ícones das redes sociais no footer */
+.lista-horizontal1 .fa-brands {
+    font-size: 1.2em; /* Tamanho 1.2x maior apenas para os ícones do footer */
+    margin: 0 15px; /* Espaço entre os ícones */
+    transition: transform 0.3s ease;
+}
+
+.lista-horizontal1 .fa-brands:hover {
+    transform: scale(1.1); /* Leve aumento ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Estilos gerais para o corpo da página
+    - controla o background (imagem/gradiente), fonte base e espaçamentos gerais
+    - usamos background-size: cover para cobrir a viewport (pode cortar parte da imagem)
+    - background-attachment: fixed cria um efeito parallax simples em desktop
+*/
+/* Corpo da página */
 body {
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de preto para vermelho escuro */    font-family: 'Times'; /* Define a fonte do texto */
+    background-image: image-set(
+        url("../img/Gemini_Generated_Image_hexlophexlophexl.png") 1x,
+        url("../img/Gemini_Generated_Image_hexlophexlophexl@2x.png") 2x
+    );
+    background-image: url("../img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+    background-size: cover; /* Cobre toda a área do corpo (pode cortar parte da imagem) */
+    background-position: center center; /* Centraliza a imagem de fundo */
+    /* Em desktops, manter o fundo fixo para efeito visual; desabilitar em telas pequenas por performance */
+    background-attachment: fixed;
+    margin:0; /* Remove margens padrão do navegador */
+    font-family:'Times', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do texto */
     min-height: 500vh; /* Altura mínima da página (500% da altura da viewport) */
     padding: 20px; /* Espaçamento interno */
     color: white; /* Cor do texto */
+    
 }
 
-/* Container para imagens */
-.imagem-container {
-    width: auto; /* Largura automática baseada no conteúdo */
-    height: 200px; /* Altura fixa */
-    border: 2px solid #ffffff; /* Borda branca de 2px */
-    border-radius: 10px; /* Cantos arredondados */
-    padding: 10px; /* Espaçamento interno */
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de fundo */
-    box-shadow: 0 4px 8px rgba(10, 5, 5, 0.2); /* Sombra suave */
-    display: inline-block; /* Exibe como elemento inline-block */
-    overflow: hidden; /* Esconde conteúdo que ultrapassa os limites */
+
+/* Cabeçalho / menu horizontal
+   - `.lista-horizontal` estiliza o menu principal (itens centrados, espaçamento)
+   - cada item é um <li> no header; lidar com hover e sombras aqui
+*/
+.lista-horizontal {
+    font-size: 1.5em; /* Tamanho grande de fonte */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    border:2px solid #ffffff; 
+    color: white; /* Texto branco no hover */
+    display: flex; /* Ativa o layout flexível */
+    justify-content: center;
+    list-style: none; /* Remove marcadores de lista */
+    padding: 0; /* Remove espaçamento interno */
+    margin: 0; /* Remove margens */
+    gap: 20px; /* Espaçamento entre os itens */
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-/* Estilo para imagens dentro do container */
-.imagem-container img {
-    width: 100%; /* Largura de 100% do container */
-    height: 100%; /* Altura de 100% do container */
-    object-fit: cover; /* Preenche o container mantendo a proporção */
-    border-radius: 5px; /* Cantos levemente arredondados */
+.lista-horizontal li {
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.lista-horizontal li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco semi-transparente no hover */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+.lista-horizontal header:hover {
+    transform: translateY(-2px); /* Efeito de levantar */
 }
 
+main {
+    margin-top: 20px; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+}
 /* Estilo para cabeçalho h1 */
 h1 {
-    font-size: 2.5em; /* Tamanho grande de fonte */
+    font-size: 1.5em; /* Tamanho grande de fonte */
     text-align: center; /* Alinhamento centralizado */
     border: 2px solid #ffffff; /* Borda branca */
-    border-radius: 10px; /* Cantos arredondados */
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente de fundo */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
     color: rgb(255, 255, 255); /* Cor do texto branca */
-    padding: 0; /* Remove espaçamento interno */
+    padding: 0px; /* Remove espaçamento interno */
     height: 75px; /* Altura fixa */
     display: flex; /* Ativa flexbox */
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-/*Aplica estilos apenas aos links dentro da navegação (tag <nav>)*/
+/* Links do menu de navegação
+    - regras específicas para links dentro do <nav> (sobrescreve o estilo global quando necessário)
+    - usamos !important para garantir contraste sobre os backgrounds do header
+*/
 nav ul li a {
     color: white !important; /* Muda a cor do texto para branco (sobrescreve estilos padrão) */
     text-decoration: none; /* Remove o sublinhado padrão dos links */
@@ -54,65 +133,171 @@ nav ul li a:hover {
     text-decoration: underline; /* Adiciona sublinhado quando o mouse passa por cima */
 }
 
-/* Estilo para cabeçalho h3 (herda estilos do h1) */
-h3 {
-    font-size: 2.5em;
-    text-align: center;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44));
-    color: rgb(255, 255, 255);
-    padding: 0;
-    height: 75px;
-    display: flex;
+
+/* Lista de vídeos
+   - cada item contém título, descrição e iframe do vídeo
+   - estilo para espaçamento e aparência dos cards de vídeo
+*/
+.lista-videos {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+.lista-videos li {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: rgba(44, 62, 80, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+.lista-videos li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+            background: rgba(44, 62, 80, 1);
+        }
+
+.video-container {
+            flex: 0 0 400px; /* Largura fixa maior */
+        }
+
+.video-container iframe {
+            width: 100%;
+            height: 500px; /* Proporção 16:9 para 400px */
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+.texto-container {
+            flex: 1;
+            color: white;
+        }
+
+.texto-container h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.4em;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+.texto-container .descricao {
+            margin: 0 0 15px 0;
+            line-height: 1.6;
+            color: #ccc;
+            font-size: 1.1em;
+        }
+
+.texto-container .detalhes {
+            display: flex;
+            gap: 20px;
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+h3{
+    font-size: 1.5em; /* Tamanho médio */
+}
+
+h4{
+    font-size: 1.5em; /* Tamanho médio */
+}
+
+h5{
+    font-size: 1.5em; /* Tamanho médio */
+}
+
+h6{
+    font-size: 1.5em; /* Tamanho médio */
+}
+h7{
+    font-size: 1.5em; /* Tamanho médio */
+}
+
+
+.p-final {
+    text-align: center; /* Alinhamento centralizado */
+    font-weight: bold; /* Negrito */
+    
+}
+
+h8{
+    font-size: 1.5em;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: block; /* Garante que seja um elemento de bloco */
+    margin: 0 auto; /* Centraliza o elemento se tiver width definido */
+    font-weight: bold; /* Negrito */
+}
+
+h9{
+    font-size: 1.5em;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: block; /* Garante que seja um elemento de bloco */
+    margin: 0 auto; /* Centraliza o elemento se tiver width definido */
+    font-weight: bold; /* Negrito */
+}
+
+p{
+    font-size: 1.2em; /* Tamanho um pouco maior para melhor legibilidade */
+}
+
+/* Lista horizontal secundária (rodapé / redes sociais)
+   - `.lista-horizontal1` usada para ícones de redes sociais
+   - técnica com `width:100vw` e margens negativas faz o elemento cobrir toda a largura da viewport
+*/
+.lista-horizontal1 {
+    display: flex; /* Ativa o layout flexível */
     justify-content: center;
-    align-items: center;
-}
-
-/* Aplica estilos específicos aos links (<a>) que estão dentro de listas (<li>) que estão dentro de listas não ordenadas (<ul>) que estão dentro da tag <aside>*/
-aside ul li a {
-    color: white !important;        /* Define a cor do texto como branco (sobrescreve outros estilos) */
-    text-decoration: none;          /* Remove o sublinhado padrão dos links */
-}
-
-/* Estilo para cabeçalho h4 (herda estilos do h1) */
-h4 {
-    font-size: 2.5em;
-    text-align: center;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44));
-    color: rgb(255, 255, 255);
-    padding: 0;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Estilo base para botões principais */
-.meu-botao-principal {
-    background-color: rgb(255, 255, 255); /* Fundo branco */
-    color: rgb(0, 0, 0); /* Texto preto */
-    padding: 10px 20px; /* Espaçamento interno */
-    border: none; /* Remove borda padrão */
-    border-radius: 5px; /* Cantos levemente arredondados */
-    cursor: pointer; /* Cursor de pointer ao passar o mouse */
-    font-size: 16px; /* Tamanho da fonte */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo para botões principais quando o mouse passa por cima */
-.meu-botao-principal:hover {
-    background: linear-gradient(rgb(0, 0, 0), rgb(173, 44, 44)); /* Gradiente no hover */
-    color: white; /* Texto branco no hover */
-    transform: translateY(-2px); /* Efeito de levitação (movimento para cima) */
-}
-
-/* Aplica estilos a TODOS os elementos <a> do documento HTML*/
-a {
-    color: white !important; /* Muda a cor de todos os links para branco */
-    text-decoration: none !important; /* Remove sublinhado de todos os links */
+    list-style: none; /* Remove marcadores de lista */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    /* Fazer o elemento ocupar toda a largura da viewport e ignorar o padding do body */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw; /* largura igual à viewport inteira */
+    box-sizing: border-box;
+    padding: 20px 0; /* espacamento vertical opcional */
 }
 
 
+
+
+/* Estilo do footer
+   - define aparência do rodapé (gradiente, sombra, preenchimento)
+   - usa técnica para ocupar toda a largura da viewport semelhante a `.lista-horizontal1`
+*/
+footer {
+    margin-top: 20px; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    font-weight: bold; /* Negrito */
+    /* Ocupa toda a largura da viewport, sem limites laterais */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
