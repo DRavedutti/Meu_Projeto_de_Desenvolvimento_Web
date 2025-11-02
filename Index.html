@@ -2,77 +2,122 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>Informações como Fazer Receitas de Churrasco</title>
-    <link rel="stylesheet" href="style.css">
-    <div class="imagem-container">
-        <img src="https://static.vecteezy.com/ti/fotos-gratis/t2/22952151-churrasco-grade-com-fogo-em-aberto-ar-fogo-chama-ai-gerado-foto.jpg" 
-        alt="Aqui a sua Trilha pela Grelha Começa!">
-    </div>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amantes de Churrasco</title>
+    <!-- CSS principal da página: carrega estilos (menus, listas, vídeos, footer) -->
+    <link rel="stylesheet" href="style.index.css">
+    <!-- Kit FontAwesome: fornece ícones usados no site (fa-solid, fa-brands, etc.) -->
+    <script src="https://kit.fontawesome.com/04ea6be566.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    </div>
+    <!-- Cabeçalho / menu principal
+        - classe `lista-horizontal` aplica layout em linha e estilos visuais
+        - cada <li> representa um item do menu; ícones <i> são decorativos
+    -->
+    <!-- Cabeçalho / menu principal -->
+    <header class="lista-horizontal">
+        <li><i class="fa-solid fa-compass fa-spin" style="color: #ffffff;"></i></li>
+        <li><a href="../../PaginaContato/contato.html/formulariocontato.html">Cadastre-se</a></li>
+        <li><i class="fa-solid fa-utensils" style="color: #ffffff;"></i></li>
+        <li><a href="../../PaginaReceitas/PaginaReceita.html">Receitas</a></li>
+        <li><i class="fa-solid fa-list-ol" style="color: #ffffff;"></i></li>
+        <li><a href="../../PaginaSobre/PaginaSobre.html">Sobre</a></li>
+        <li><i class="fa-solid fa-whiskey-glass" style="color: #ffffff;"></i></li>
+        <li><a href="../../Pagina Bebidas/paginabebida.html">Bebidas</a></li>
+    </header>
+    <br><br>
 
-        <header>
-        <h1>Minhas Receitas Personalizadas para Churrasco</h1><br>
+    <!-- Conteúdo principal da página (títulos e introdução) -->
+    <main><br>
+        <h1>Receitas para Churrasco</h1><br>
         <h2>Temos Receitas Variadas para todos os Tipos de Carne</h2>
-        </header>
+    </main>
 
-        <nav>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=IIWXM9vx-g0">Receita de Picanha Selada</a></li>
-                <li><a href="https://www.youtube.com/watch?v=JzvrX7DGSwQ">Receita de Picanha na Brasa</a></li>
-                <li><a href="https://www.youtube.com/watch?v=x5Ig9kTucAs">Receita de Frango com Mostarda</a></li>
-                <li><a href="https://www.youtube.com/watch?v=yJnhM79dST8">Receita de Linguica Recheada com Queijo</a></li>
-                <li><a href="https://www.youtube.com/watch?v=r9F2dDGtL0U">Receita de Pão de Alho Caseiro</a></li>
-            </ul>
-        </nav>
+    <!-- Navegação secundária: lista de receitas em vídeo e chamadas para ação -->
+    <nav>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=IIWXM9vx-g0"><h3>🥩 Receita de Picanha Selada</h3></a>
+                <p class="descricao">Aprenda a técnica perfeita para selar uma picanha suculenta com a crosta dourada ideal. Dicas de tempero e ponto da carne.</p>
+                <div class="video-container">
+                    <iframe width="500" height="300" 
+                    src="https://www.youtube.com/embed/IIWXM9vx-g0" 
+                    frameborder="0" 
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </li><br><br>
 
-        <main>
-            <h3>Bem Vindo Churraqueiro de Elite!</h3>
-            <p> Aqui você vai encontrar as Melhores Receitas de Churrasco para deixar a sua familia feliz e até Ganhar Dinheiro
-                Fiquem Atentos pois serão varias Novidades Postadas. Naveguem pelas nossas Receitas:
-            </p>
 
-            <aside>
-                <p>Publicações de Receitas Feitas</p>
-                <ul>
-                    <li><a href="https://www.youtube.com/watch?v=Oo9Y2PWDNMA">Nova Forma de Selar uma Picanha Usando um Tempero Exotico</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=r9F2dDGtL0U&t=34s"> Dica de Como fazer esse Tempero Misterioso</a></li><br>
-                </ul>
-                <p>Mais Dicas Acesse nosso Instagram</p>
-            </aside>
+            <li><a href="https://www.youtube.com/watch?v=JzvrX7DGSwQ"><h4>🔥 Receita de Picanha na Brasa</h4></a>
+                <p class="descricao">Técnica tradicional de preparar picanha na brasa com carvão. Segredos do ponto ideal e repouso da carne.</p>
+                <div class="video-container">
+                    <iframe width="500" height="300" 
+                    src="https://www.youtube.com/embed/JzvrX7DGSwQ" 
+                    frameborder="0" 
+                    allowfullscreen>
+                    </iframe>
+                </div>    
+            </li><br><br>
 
-            <h4>Quer Novidades sobre mais Receitas?</h4>
-            <p>Clique no botão Abaixo para Receber e-mails
-                Ou se Preferir nos siga no Instagram e no Tik Tok
-            </p>
-            <br>
 
-            <button class="meu-botao-principal">Receber E-mails</button>
-            <button class="meu-botao-principal">Acessar Instagram</button>
-            <button class="meu-botao-principal">Acessar Tik Tok</button><br><br>
+            <li><a href="https://www.youtube.com/watch?v=x5Ig9kTucAs"><h5>🍗 Receita de Frango com Mostarda</h5></a>
+                <p class="descricao">Frango grelhado com molho especial de mostarda e mel. Perfeito para churrascos e jantares especiais.</p>
+                <div class="video-container">
+                    <iframe width="500" height="300" 
+                    src="https://www.youtube.com/embed/x5Ig9kTucAs" 
+                    frameborder="0" 
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </li><br><br>
 
-            <a href="file:///C:/Users/DAVI/Desktop/MeuProjetoDesenvolvimentoWeb/MeuProjetoWeb/PaginaContato/contato.html/formulariocontato.html?nome=&senha=&idade=&numero_de_telefone=&tipo_de_receita_para_churrasco=picanha&mensagem_da_sua_receita="><p>Clique Nesse Link para acessar novas Receitas</p></a>
 
+            <li><a href="https://www.youtube.com/watch?v=yJnhM79dST8"><h6>🌭 Linguiça Recheada com Queijo</h6></a>
+                <p class="descricao">Ideal para churrascos e lanches saborosos.</p>
+                <div class="video-container">
+                    <iframe width="500" height="300" 
+                    src="https://www.youtube.com/embed/yJnhM79dST8" 
+                    frameborder="0" 
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </li><br><br>
+
+
+            <li><a href="https://www.youtube.com/watch?v=r9F2dDGtL0U"><h7>🧄 Pão de Alho Caseiro</h7></a>
+                <p class="descricao">O acompanhamento perfeito para churrascos e encontros especiais.</p>
+                <div class="video-container">
+                    <iframe width="500" height="300" 
+                    src="https://www.youtube.com/embed/r9F2dDGtL0U" 
+                    frameborder="0" 
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </li><br>
+        </ul><br>
+
+    <h8 class="p-final">Quer mais informações?</h8><br><br>
+        <nav class="lista-horizontal1">
+            <ul><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></ul>
+            <ul><i class="fa-brands fa-youtube" style="color: #ffffff;"></i></i></ul>
+            <ul><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></ul>
+            <ul><i class="fa-brands fa-tiktok" style="color:#ffffff;"></i></ul>
+        </nav><br><br>
+    <h9>Clique no ícone ao lado do menu ou no botão acima "Cadastre-se" para receber receitas de churrasco</h9><br><br>
+    <!-- Ícone clicável que leva ao formulário de contato/cadastro -->
+    <a href="../../PaginaContato/contato.html/formulariocontato.html" aria-label="Cadastre-se"><i class="fa-solid fa-compass fa-spin" style="color: #ffffff;"></i></a>
+    </nav>
 
         
-        </main>
+    </main>
 
-        <Footer>
-            <p>$copy; 2025 Meu Blog de Receitas de Churrasco. Todos os Direitos Reservados</p>
-            <p>Desenvolvido pelo Aluno Davi do Curso de Analise e Desenvolvimento de Sistemas</p>
-        </Footer>
-
-
-
-    
-
-
-
-
-    </body>
+    <!-- Footer: informações de copyright e autor -->
+    <footer>
+        <p>&copy; 2025 Meu Blog de Receitas de Churrasco. Todos os Direitos Reservados</p>
+        <p>Desenvolvido pelo Aluno Davi do Curso de Analise e Desenvolvimento de Sistemas</p>
+    </footer>
+</body>
 
 </html>
