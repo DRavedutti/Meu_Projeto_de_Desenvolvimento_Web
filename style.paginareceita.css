@@ -1,0 +1,333 @@
+
+/*
+    style.paginareceita.css
+    - Propósito: estilos específicos da página de receitas
+    - Notas: regras escopadas em .recipe-page para evitar vazamento global.
+    - Observações: muitas regras foram adaptadas a partir do style.index.css e style.formulario.css.
+*/
+/* Corpo da página */
+body {
+    background-image: image-set(
+        url("../img/Gemini_Generated_Image_hexlophexlophexl.png") 1x,
+        url("../img/Gemini_Generated_Image_hexlophexlophexl@2x.png") 2x
+    );
+    background-image: url("../PaginaReceitas/img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-repeat: no-repeat; /* Evita repetição da imagem de fundo */
+    background-size: cover; /* Cobre toda a área do corpo (pode cortar parte da imagem) */
+    background-position: center center; /* Centraliza a imagem de fundo */
+    /* Em desktops, manter o fundo fixo para efeito visual; desabilitar em telas pequenas por performance */
+    background-attachment: fixed;
+    margin:0; /* Remove margens padrão do navegador */
+    font-family:'Times', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte do texto */
+    min-height: 500vh; /* Altura mínima da página (500% da altura da viewport) */
+    padding: 20px; /* Espaçamento interno */
+    color: white; /* Cor do texto */
+    
+}
+
+main {
+    margin-top: 20px; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+    
+}
+.recipe-page{
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.30); /* leve painel translúcido sobre o background */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+h1{
+    text-align: center;
+}
+
+
+.recipe-page header p{
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 1.05em;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.recipe-page h2{
+    /* Estilo idêntico ao h1: gradiente, borda branca, centro, altura fixa e sombras */
+    font-size: 1.5em;
+    text-align: center;
+    border: 2px solid #ffffff;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: rgb(255,255,255);
+    padding: 0px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.recipe-page h3{
+    font-size: 1.2em;
+    color: #fff;
+    margin-top: 18px;
+}
+
+.recipe-page .ingredients,
+.recipe-page .preparation,
+.recipe-page ul,
+.recipe-page ol{
+    max-width: 980px;
+    margin: 10px auto 20px auto;
+    text-align: left;
+    padding-left: 1.1rem; /* espaço para marcadores/numeração */
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    padding: 14px 18px;
+    color: #eee;
+}
+
+.recipe-page ul li,
+.recipe-page ol li{
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Layout em colunas quando a receita tiver imagem + conteúdo */
+.recipe-row{
+    display: flex;
+    gap: 24px;
+    /* estica os filhos para que a imagem acompanhe a altura do conteúdo ao lado */
+    align-items: stretch;
+}
+.recipe-image{
+    flex: 0 0 380px; /* largura fixa relativa */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+    display: block;
+    /* Garante uma altura mínima para reduzir cortes extremos */
+    min-height: 220px;
+    /* Mantém uma proporção razoável por padrão (ajusta em browsers modernos) */
+    aspect-ratio: 4 / 3;
+}
+.recipe-image img{
+    width: 100%;
+    height: 100%; /* ocupa toda a altura do .recipe-image que foi esticada */
+    display: block;
+    object-fit: cover; /* preserva proporção e corta o excesso para preencher */
+    /* Posição padrão levemente para cima: mantém a carne mais visível em muitas fotos */
+    object-position: center 35%;
+    transition: object-position 300ms ease, transform 300ms ease;
+}
+
+/* Presets para controlar a área visível da imagem caso alguma foto fique cortada
+   Aplique a classe à tag <img> (ex.: <img class="focus-top" src="..."></img>) */
+.recipe-image img.focus-center{ object-position: center center; }
+.recipe-image img.focus-top{ object-position: center 20%; }
+.recipe-image img.focus-bottom{ object-position: center 80%; }
+.recipe-image img.focus-left{ object-position: 20% center; }
+.recipe-image img.focus-right{ object-position: 80% center; }
+
+/* Pequena escala ao passar o mouse para dar sensação de refinamento (opcional) */
+.recipe-image:hover img{ transform: scale(1.02); }
+.recipe-content{
+    flex: 1;
+}
+
+/* Pequenas adaptações responsivas */
+@media (max-width: 900px){
+    .recipe-page{
+        margin: 16px;
+        padding: 14px;
+    }
+    .recipe-row{flex-direction: column;}
+    .recipe-image{flex: 0 0 auto; width:100%;}
+    /* Em telas pequenas, a imagem volta a ter altura automática para não forçar um corte estranho */
+    .recipe-image img{ height: auto; object-fit: cover; }
+    body{background-attachment: scroll;} /* performance em mobile */
+}
+
+/* Links dentro da recipe-page: manter contraste e leitura */
+.recipe-page a{
+    color: #fff; /* segue o padrão global */
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.recipe-page a:hover {
+    opacity: 0.8;
+}
+
+/* Estilos adicionais inspirados em style.formulario.css,
+   adaptados e escopados para `.recipe-page` mantendo o que já existe */
+.recipe-page .p-instrucoes-formulario{
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.recipe-page .titulo{
+    font-size: 2.5em;
+    text-align: center;
+    color: rgb(255,255,255);
+    padding: 0;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Painel com gradiente parecido com o formulário para header e formulários/caixas internas */
+.recipe-page header,
+.recipe-page form,
+.recipe-page .card-panel{
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Textarea estilizada (caso a página contenha área de receita com esse id) */
+.recipe-page #mensagem_da_sua_receita{
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    resize: vertical;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.recipe-page #mensagem_da_sua_receita:focus{
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Botões no estilo do formulário, escopados para recipe-page */
+.recipe-page .meu-botao{
+    background-color: rgb(255,255,255);
+    color: rgb(0,0,0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+.recipe-page .meu-botao:hover{
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Labels — caso existam formulários/controles dentro da recipe-page */
+.recipe-page form label{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.recipe-page .desalinhado{
+    display: inline !important;
+    width: auto !important;
+    text-align: left !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* -----------------------------
+   Divisórias / contador de páginas (estilo livro)
+   - Cada .recipe-row é tratada como uma "página" e recebe uma divisão visual
+   - O contador aumenta automaticamente e exibe "Página N" abaixo/direita
+   - Também adiciona suporte para impressão (page-break)
+   ----------------------------- */
+.recipe-page{
+    counter-reset: recipe; /* reset do contador dentro do container */
+}
+.recipe-row{
+    counter-increment: recipe;
+    position: relative;
+    padding-bottom: 48px; /* espaço para o número da página */
+    margin-bottom: 48px;
+    border-bottom: 1px dashed rgba(255,255,255,0.08); /* divisória sutil */
+}
+
+.recipe-row::after{
+    content: "Página " counter(recipe);
+    position: absolute;
+    right: 16px;
+    bottom: -28px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(60,10,10,0.3));
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95em;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+}
+
+/* Ajustes em telas pequenas: manter o número visível, mas com posicionamento diferente */
+@media (max-width: 900px){
+    .recipe-row{ padding-bottom: 36px; margin-bottom: 36px; }
+    .recipe-row::after{
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -26px;
+        font-size: 0.9em;
+        padding: 5px 8px;
+    }
+}
+
+/* Impressão: cada recipe-row vira uma página impressa separada */
+@media print{
+    .recipe-row{ page-break-after: always; border-bottom: none; padding-bottom: 12px; }
+    .recipe-row::after{ position: static; display: block; text-align: center; margin-top: 6px; background: transparent; color: #000; box-shadow: none; border: none; }
+    body{ background: #fff !important; color: #000 !important; }
+}
+

@@ -1,0 +1,124 @@
+body {
+    background-image: image-set(
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png") 1x,
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl@2x.png") 2x
+    );
+    background-image: url("../../MeuProjetoWeb/PaginaSobre/img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Times', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reaplicando estilos do formulário para a página Sobre
+   - título, containers com gradiente, botões, textarea e links
+   - preservamos o body já definido acima e adicionamos somente regras adicionais */
+.p-instrucoes-formulario {
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.desalinhado{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Container principal para centralizar e adicionar borda com gradiente */
+header {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+
+
+form label {
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Estilo base para os botões */
+.meu-botao {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.meu-botao:hover {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Aplicar o mesmo estilo do textarea do formulário ao textarea de sugestões na página Sobre */
+#sugestoes {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente de fundo */
+    color: white; /* Cor do texto */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 15px; /* Cantos arredondados */
+    padding: 15px; /* Espaçamento interno */
+    font-family: Arial, sans-serif; /* Tipo de fonte */
+    font-size: 16px; /* Tamanho da fonte */
+    resize: vertical; /* Permite redimensionamento apenas vertical */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#sugestoes:focus {
+    outline: none; /* Remove contorno padrão do navegador */
+    border-color: #ffffff; /* Mantém a borda branca */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Sombra branca mais intensa */
+}
+
+#sugestoes::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
