@@ -1,4 +1,3 @@
-
 /*
     style.paginareceita.css
     - Propósito: estilos específicos da página de receitas
@@ -23,6 +22,32 @@ body {
     padding: 20px; /* Espaçamento interno */
     color: white; /* Cor do texto */
     
+}
+
+/* Estilo base para os botões */
+.botao-download {
+    background-color: rgb(255, 255, 255); /* Fundo branco */
+    color: rgb(0, 0, 0); /* Texto preto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Cantos levemente arredondados */
+    cursor: pointer; /* Cursor de pointer ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Transições suaves */
+}
+
+/* Estilo para botões quando o mouse passa por cima (hover) */
+.botao-download:hover {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente no hover */
+    color: white; /* Texto branco no hover */
+    transform: translateY(-2px); /* Efeito de levitação (movimento para cima) */
 }
 
 main {
@@ -262,6 +287,46 @@ h1{
     transform: translateY(-2px);
 }
 
+/* Tornar .botao-download idêntico visualmente ao .meu-botao (escopado) */
+.recipe-page .botao-download,
+.recipe-page .botao-download:link,
+.recipe-page .botao-download:visited {
+    display: inline-block;
+    background-color: rgb(255,255,255);
+    color: rgb(0,0,0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+.recipe-page .botao-download:hover,
+.recipe-page .botao-download:focus{
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white;
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Forçar cor do texto padrão como preta para links/botões .botao-download
+   e garantir que elementos internos (ex.: <span>, <i>) herdem essa cor. */
+.recipe-page a.botao-download,
+.recipe-page button.botao-download {
+    color: rgb(0,0,0);
+}
+.recipe-page a.botao-download *,
+.recipe-page button.botao-download * {
+    color: inherit;
+}
+
 /* Labels — caso existam formulários/controles dentro da recipe-page */
 .recipe-page form label{
     display: inline-block;
@@ -330,4 +395,3 @@ h1{
     .recipe-row::after{ position: static; display: block; text-align: center; margin-top: 6px; background: transparent; color: #000; box-shadow: none; border: none; }
     body{ background: #fff !important; color: #000 !important; }
 }
-
