@@ -1,0 +1,136 @@
+/*
+   style.login.css
+   Propósito: Estilização da página de login com tema escuro e gradiente
+   Características:
+   - Design responsivo com Flexbox
+   - Fundo com imagem e sobreposição de gradiente
+   - Efeitos de transição e sombras
+   - Esquema de cores: Tons de vermelho e preto com detalhes em branco
+*/
+
+/* Reset global para garantir consistência */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configuração do corpo da página com imagem de fundo */
+body {
+    min-height: 100vh; /* Altura mínima de 100% da viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centralização vertical e horizontal */
+    background-image: url("../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Configurações para imagem de fundo responsiva */
+    font-family: 'Times', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding: 20px; /* Espaçamento para telas menores */
+}
+
+/* Container principal com gradiente e efeito de vidro */
+.login-container {
+    /* Gradiente vertical do preto ao vermelho com transparência */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    padding: 30px;
+    border-radius: 15px;
+    /* Efeito de brilho com múltiplas sombras */
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+    width: 100%;
+    max-width: 400px; /* Largura máxima para manter legibilidade */
+}
+
+/* Estilo do título */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em; /* Tamanho destacado para o título */
+}
+
+/* Configuração do formulário */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaçamento consistente entre elementos */
+}
+
+/* Estilo dos rótulos dos campos */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    text-align: left;
+    width: 100%; /* Ocupar largura total */
+}
+
+/* Estilo dos campos de entrada */
+input {
+    width: 100%;
+    padding: 12px;
+    /* Borda e fundo semi-transparentes */
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Transição suave para interações */
+}
+
+/* Estilo do texto placeholder */
+input::placeholder {
+    color: rgba(255,255,255,0.5); /* Texto placeholder semi-transparente */
+}
+
+/* Estado de foco dos campos */
+input:focus {
+    outline: none;
+    border-color: white; /* Borda branca quando focado */
+    background: rgba(255,255,255,0.2); /* Fundo mais claro quando focado */
+}
+
+/* Container dos botões */
+.buttons-container {
+    display: flex;
+    gap: 15px; /* Espaçamento entre botões */
+    margin-top: 10px;
+}
+
+/* Estilo base dos botões */
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+}
+
+/* Efeito hover nos botões */
+button:hover {
+    /* Mesmo gradiente do container para consistência visual */
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white;
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}

@@ -1,0 +1,79 @@
+<!--
+    login.html
+    - Propósito: Página de autenticação do usuário
+    - Estrutura:
+        1. Container centralizado com gradiente (.login-container)
+        2. Formulário com campos de usuário e senha
+        3. Botões de ação (Entrar/Limpar)
+    - JavaScript incluso para validação e redirecionamento
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuração para responsividade -->
+    <link rel="stylesheet" href="style.login.css"> <!-- Carrega os estilos -->
+    <title>Página de Login</title>
+</head>
+<body>
+    <!-- Container principal - aplica o gradiente e centraliza o conteúdo -->
+    <div class="login-container">
+        <h1>Login</h1>
+        <!-- Formulário com evento onsubmit que chama a função logar() -->
+        <form onsubmit="return logar(event)">
+            <!-- Campo de usuário -->
+            <label for="username">Nome de Usuário:</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                placeholder="Digite seu nome de usuário" 
+                required> <!-- required força preenchimento -->
+
+            <!-- Campo de senha -->
+            <label for="password">Senha:</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Digite sua senha" 
+                required>
+
+            <!-- Container para os botões (mantém agrupados e alinhados) -->
+            <div class="buttons-container">
+                <button type="submit">Entrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script de validação do login -->
+    <script>
+        /**
+         * Função que valida o login e redireciona se correto
+         * @param {Event} event - Evento do formulário
+         * @returns {boolean} false para prevenir envio do form
+         */
+        function logar(event) {
+            // Previne o envio padrão do formulário
+            event.preventDefault();
+
+            // Obtém os valores dos campos
+            var login = document.getElementById("username").value;
+            var senha = document.getElementById("password").value;
+
+            // Valida credenciais (hardcoded para demonstração)
+            if(login == "Ravedutti" && senha == "Ravedutti") {
+                alert("Login realizado com sucesso!");
+                // Redireciona para a página principal usando caminho relativo
+                window.location.href = "../PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html";
+                return false;
+            } else {
+                alert("Nome de usuário ou senha incorretos. Tente novamente.");
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>
