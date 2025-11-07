@@ -20,7 +20,6 @@
         min-height: 500vh; /* Altura mínima da página (500% da altura da viewport) */
         padding: 20px; /* Espaçamento interno */
         color: white; /* Cor do texto */
-    
     }
 
     main {
@@ -28,7 +27,33 @@
         text-align: center; /* Centraliza o texto */
     
     }
-    .recipe-page{
+
+.botao-download{
+    background-color: rgb(255, 255, 255); /* Fundo branco */
+    color: rgb(0, 0, 0) !important; /* Texto preto FORÇADO */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out; /* Simplificado */
+}
+
+.botao-download:hover {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    color: white !important; /* Texto branco FORÇADO no hover */
+    transform: translateY(-2px);
+}
+
+
+.recipe-page{
         max-width: 1100px;
         margin: 30px auto;
         padding: 20px;
