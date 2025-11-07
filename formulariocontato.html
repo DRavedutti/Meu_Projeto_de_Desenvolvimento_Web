@@ -1,96 +1,177 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<!--
-  formulariocontato.html
-  - Propósito: formulário para receber receitas do usuário.
-  - Observações: inclui inputs, radio/checkbox, textarea e botões submit/reset.
-  - Comentários explicativos foram adicionados e pequenos ajustes ortográficos foram aplicados.
--->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Formulário de contato — receber receitas</title>
-    <!-- CSS específico do formulário: carrega estilos (layout do form, botões, textarea) -->
-    <link rel="stylesheet" href="style.formulario.css">
-    <!-- FontAwesome (ícones usados na página, se houver) -->
-    <script src="https://kit.fontawesome.com/04ea6be566.js" crossorigin="anonymous"></script>
-</head>
+/*
+    style.formulario.css
+    - Propósito: estilos para o formulário de contato/receitas.
+    - Notas: contém regras para layout do form, botões, textarea e header.
+    - Observação: copiado/compartilhado com outras páginas (sobre, receitas, bebidas) quando apropriado.
+*/
+/* Estilos gerais para o corpo da página */
+body {
+    background-image: image-set(
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png") 1x,
+        url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl@2x.png") 2x
+    );
+    background-image: url("../../PaginaPrincipal/img/Gemini_Generated_Image_hexlophexlophexl.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Times', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-<body>
-    <!-- Cabeçalho do formulário -->
-    <header>
-          <h1 class="titulo">Formulário para receber receitas</h1>
-    </header>
+.p-instrucoes-formulario {
+    /* Parágrafo de instruções no topo do formulário
+       - destacado para orientar o usuário sobre o preenchimento
+    */
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 
-    <!-- Formulário principal
-        - contém campos de entrada, opções e textarea para a receita
-        - mantemos os botões de enviar e limpar aqui
-    -->
-    <form>
-        <p class="p-instrucoes-formulario">Preencha todos os Campos Abaixo para Receber Receitas</p><br><br>
-        <label for="nome">Nome Completo: </label>
-        <input type="text" id="nome" name="nome" placeholder="Seu Nome Aqui"><br><br>
+p{
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
-        <label for="email">Email: </label>
-        <input type="email" id="email" placeholder="seu.email@exemplo.com"><br><br>
+.desalinhado{
+    font-size: 1.2em;
+    font-weight: bold;
+}
 
-        <label for="senha">Senha: </label>
-        <input type="password" id="senha" name="senha" placeholder="********"><br><br>
+/* Container principal para centralizar e adicionar borda com gradiente */
+form, header {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
 
-        <label for="idade">Sua Idade: </label>
-        <input type="number" id="idade" name="idade" min="16" max="100"><br><br>
+/* Estilo para o título principal */
+.titulo {
+    font-size: 2.5em; /* Tamanho da fonte (2.5 vezes o tamanho padrão) */
+    text-align: center; /* Alinhamento centralizado do texto */
+    color: rgb(255, 255, 255); /* Cor do texto branca */
+    padding: 0; /* Remove espaçamento interno */
+    height: 75px; /* Altura fixa */
+    display: flex; /* Ativa flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
 
-        <label for="numero_de_telefone">Seu Numero: </label>
-        <input type="tel" id="numero_de_telefone" name="numero_de_telefone" placeholder="(00) 000000000"><br><br>
 
-        <p>Qual Novo Tipo de Receita você quer que Fazemos para você?</p>
-        <input type="radio" id="picanha" name="tipo_de_receita_para_churrasco" value="picanha">
-        <label for="picanha">Picanha</label><br>
-        <input type="radio" id="frango" name="tipo_de_receita_para_churrasco" value="frango">
-        <label for="frango">Frango</label><br>
-        <input type="radio" id="frango_assado" name="tipo_de_receita_para_churrasco" value="frango_assado">
-        <label for="frango_assado">Frango Assado</label><br>
-        <input type="radio" id="linguica" name="tipo_de_receita_para_churrasco" value="linguica">
-        <label for="linguica">Linguiça</label><br>
-        <input type="radio" id="pao_de_alho" name="tipo_de_receita_para_churrasco" value="pao_de_alho">
-        <label for="pao_de_alho">Pão de Alho</label><br>
+form label {
+    display: inline-block; /* Transforma o label em um elemento de bloco inline */
+    width: 150px; /* Largura fixa de 150 pixels para todos os labels */
+    text-align: left; /* Alinha o texto do label à esquerda */
+    margin-right: 10px; /* Adiciona 10px de margem à direita para espaçamento */
+    margin-bottom: 10px;/* Adiciona 10px de margem abaixo para espaçamento vertical */
+}
 
-        <p>Conte para nós. Qual tipo de receita você conhece?</p>
-        <input type="checkbox" id="picanha_check" name="tipo_de_receita" value="picanha">
-        <label for="picanha_check">Picanha</label><br>
-        <input type="checkbox" id="frango_check" name="tipo_de_receita" value="frango">
-        <label for="frango_check">Frango</label><br>
-        <input type="checkbox" id="frango_assado_check" name="tipo_de_receita" value="frango_assado">
-        <label for="frango_assado_check">Frango Assado</label><br>
-        <input type="checkbox" id="linguica_check" name="tipo_de_receita" value="linguica">
-        <label for="linguica_check">Linguiça</label><br>
-        <input type="checkbox" id="pao_de_alho_check" name="tipo_de_receita" value="pao_de_alho">
-        <label for="pao_de_alho_check">Pão de Alho</label><br>
-        <input type="checkbox" id="peixe_check" name="tipo_de_receita" value="peixe">
-        <label for="peixe_check">Peixe</label><br>
-        <input type="checkbox" id="costela_check" name="tipo_de_receita" value="costela">
-        <label for="costela_check">Costela</label><br><br>
+.desalinhado {
+    display: inline !important; /* Volta ao display inline padrão (sobrescreve inline-block) */
+    width: auto !important; /* Largura automática (remove a largura fixa de 150px) */
+    text-align: left !important; /* Mantém alinhamento à esquerda (já era left mesmo) */
+    margin-right: 0 !important;  /* Remove completamente a margem direita */
+    margin-bottom: 0 !important; /* Remove completamente a margem inferior */
+}
 
-        <label for="mensagem_da_sua_receita" class="desalinhado">Escreva como faz a sua receita ou como quer que fazemos para você:</label><br><br>
-        <textarea id="mensagem_da_sua_receita" name="mensagem_da_sua_receita" rows="6" cols="40" placeholder="Digite aqui...."></textarea><br><br>
-        
-        <button type="submit" class="meu-botao">Enviar Receita</button>
-        <button type="reset" class="meu-botao">Limpar Receita</button>
-    <a href="../../PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html"><i class="fa-solid fa-utensils" style="color: #ffffff;"></i></a>
-    </form>
+/* Estilo para a área de texto (textarea) */
+#mensagem_da_sua_receita {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente de fundo */
+    color: white; /* Cor do texto */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 15px; /* Cantos arredondados */
+    padding: 15px; /* Espaçamento interno */
+    font-family: Arial, sans-serif; /* Tipo de fonte */
+    font-size: 16px; /* Tamanho da fonte */
+    resize: vertical; /* Permite redimensionamento apenas vertical */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
 
-    <!-- Rodapé do formulário (mensagem de agradecimento) -->
-    <footer>
-        <p>Obrigado por nos ajudar a trazer mais conteudo e ajudar serem craques no churrasco</p>
-    </footer>
+/* Estilo quando o textarea está em foco (selecionado) */
+#mensagem_da_sua_receita:focus {
+    outline: none; /* Remove contorno padrão do navegador */
+    border-color: #ffffff; /* Mantém a borda branca */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Sombra branca mais intensa */
+}
 
-    <!-- Botão/Link para voltar à página inicial
-         - usa caminho relativo para navegar de volta à página principal
-         - se hospedar o site, prefira caminhos relativos/absolutos sem file://
-    -->
-    <button onclick="window.location.href='../../PaginaPrincipal/index.html/indexmeusitedereceitasdechurrasco.html'" 
-            class="meu-botao">
-        Volte Para Página Inicial
-    </button>
-</body>
-</html>
+/* Estilo para o texto placeholder do textarea */
+#mensagem_da_sua_receita::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Placeholder com opacidade reduzida */
+}
+
+/* Estilização do footer */
+footer {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    );
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo base para os botões */
+.meu-botao {
+    background-color: rgb(255, 255, 255); /* Fundo branco */
+    color: rgb(0, 0, 0); /* Texto preto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Cantos levemente arredondados */
+    cursor: pointer; /* Cursor de pointer ao passar o mouse */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Transições suaves */
+}
+
+/* Estilo para botões quando o mouse passa por cima (hover) */
+.meu-botao:hover {
+    background: linear-gradient(180deg,
+        rgba(0,0,0,1) 0%,
+        rgba(30,8,8,0.95) 25%,
+        rgba(90,18,18,0.85) 55%,
+        rgba(140,30,30,0.9) 80%,
+        rgba(173,44,44,1) 100%
+    ); /* Gradiente no hover */
+    color: white; /* Texto branco no hover */
+    transform: translateY(-2px); /* Efeito de levitação (movimento para cima) */
+}
+
+a {
+    color: white !important; /* Muda a cor de todos os links para branco */
+    text-decoration: none !important; /* Remove sublinhado de todos os links */
+}
